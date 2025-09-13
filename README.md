@@ -1,1 +1,227 @@
-# mensagem.html
+<!DOCTYPE html><html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Feliz Aniversário 💖</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #ffc1e3, #ffe6f0);
+      color: #8b005d;
+      text-align: center;
+      overflow-x: hidden;
+      overflow-y: auto;
+      height: auto;
+      min-height: 100vh;
+    }
+
+    header {
+      width: 100%;
+      background-color: #ffb6d9;
+      padding: 20px 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      position: relative;
+      z-index: 2;
+    }
+
+    header h2 {
+      margin: 0;
+      font-size: 30px;
+      color: #fff;
+    }
+
+    footer {
+      width: 100%;
+      background-color: #ffb6d9;
+      padding: 15px 10px;
+      margin-top: 40px;
+      font-size: 16px;
+      color: #fff;
+      box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 30px 20px;
+      box-sizing: border-box;
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      margin-top: 60px;
+      font-size: 36px;
+    }
+
+    p {
+      font-size: 20px;
+      margin-top: 20px;
+      max-width: 600px;
+      line-height: 1.5;
+    }
+
+    button {
+      margin-top: 30px;
+      padding: 12px 24px;
+      font-size: 16px;
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      z-index: 2;
+      position: relative;
+    }
+
+    button:hover {
+      background-color: #e055a4;
+    }
+
+    .hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .heart {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background-color: pink;
+      transform: rotate(45deg);
+      animation: float 6s infinite ease-in;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background-color: pink;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -15px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -15px;
+      top: 0;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(45deg);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) rotate(45deg);
+        opacity: 0;
+      }
+    }
+
+    audio {
+      display: none;
+    }
+
+    #letra {
+      display: none;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+
+    .lyrics p {
+      font-size: 18px;
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
+
+    .lyrics i {
+      display: block;
+      color: #222;
+      font-style: italic;
+    }
+
+    img {
+      max-width: 250px;
+      border-radius: 16px;
+      margin: 30px 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>✨Um dia especial merece um carinho especial✨</h2>
+  </header>
+
+  <div class="hearts">
+    <div class="heart" style="left: 10%; animation-delay: 0s;"></div>
+    <div class="heart" style="left: 30%; animation-delay: 1s;"></div>
+    <div class="heart" style="left: 50%; animation-delay: 2s;"></div>
+    <div class="heart" style="left: 70%; animation-delay: 3s;"></div>
+    <div class="heart" style="left: 90%; animation-delay: 4s;"></div>
+  </div>
+
+  <h1>🎂💕</h1>
+
+
+ <p>  Giovanaaa! 🎂
+Chegou o grande dia em que a estrela brilha. Gi, eu não canso de agradecer por ter você na minha vida. A gente pode se zoar, rir das nossas maluquices e até brigar de vez em quando, mas no fundo eu sei que a nossa amizade é daquelas que duram pra sempre, mesmo que nós não conversarmos sempre. Você tem um jeitinho único de deixar tudo mais leve, e eu valorizo cada momento ao seu lado. Que esse novo ciclo venha cheio de coisas boas, sonhos realizados e muitas oportunidades pra você mostrar pro mundo o quão incrível é. Amo você, sua chata maravilhosa! 💕</p>
+    
+<p>Amo você</p><br>
+
+<p>bjos,<br>
+thina🩷 </p>
+
+  <button onclick="tocarEMostrar()">💗 Quero te dedicar uma música...</button>
+
+  <audio id="audio">
+    <source src="Just Fine.mp3" type="audio/mpeg">
+    Seu navegador não suporta áudio 😢
+  </audio>
+
+  <div id="letra">
+    <img src="https://occ-0-2203-299.1.nflxso.net/art/9a72a/06a79dc3c9e24c31b5b4aabf38ebccf6f789a72a.jpg" 
+     alt="Sam & Cat" 
+     width="400"
+    <h2>Just Fine</h2>
+   
+  <footer>
+    Com mto amor, kity🩷
+  </footer>
+
+  <script>
+    function tocarEMostrar() {
+      const audio = document.getElementById("audio");
+      const letra = document.getElementById("letra");
+
+      audio.volume = 0.7;
+
+      audio.play().then(() => {
+        letra.style.display = "block";
+        setTimeout(() => {
+          letra.style.opacity = 1;
+          letra.scrollIntoView({ behavior: "smooth" });
+        }, 300);
+      }).catch(() => {
+        alert("Clique para permitir o som :)");
+      });
+    }
+  </script>
+</body>
+</html>
