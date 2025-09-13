@@ -202,7 +202,7 @@ thina🩷 </p>
     <h2>Just Fine</h2>
    
   <footer>
-    Com mto amor, kity🩷
+    Com mto amor, thina🩷
   </footer>
 
   <script>
